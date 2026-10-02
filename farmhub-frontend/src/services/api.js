@@ -1,7 +1,10 @@
 import axios from "axios";
 
+export const API_BASE_URL =
+  (import.meta.env.VITE_API_URL || "http://127.0.0.1:8000/api").replace(/\/+$/, "");
+
 const API = axios.create({
-  baseURL: "http://localhost:8080/api",
+  baseURL: API_BASE_URL,
 });
 
 API.interceptors.request.use((config) => {

@@ -1,4 +1,6 @@
-const API_BASE_URL = "http://localhost:8080/api/auth";
+import { API_BASE_URL as ROOT_API } from "./api";
+
+const API_BASE_URL = `${ROOT_API}/auth`;
 
 async function readError(response) {
   const text = await response.text();
